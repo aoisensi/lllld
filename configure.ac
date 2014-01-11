@@ -8,7 +8,7 @@ AC_CONFIG_SRCDIR([src/lexer/tokenstream.cpp])
 AC_CONFIG_HEADERS([config.h])
 
 # Checks for programs.
-AC_PROG_CXX
+AC_PROG_CXX(clang++ g++)
 AC_PROG_RANLIB
 
 # Checks for libraries.
