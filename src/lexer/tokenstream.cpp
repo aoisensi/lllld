@@ -1,8 +1,10 @@
 #include "tokenstream.hpp"
 
+#include<stdio.h>
+
 //デストラクタ
 TokenStream::~TokenStream() {
-	for(int i=0; i<Tokens.size(); i++) {
+	for(unsigned int i=0; i<Tokens.size(); i++) {
 		SAFE_DELETE(Tokens[i]);
 	}
 	Tokens.clear();
@@ -38,13 +40,12 @@ bool TokenStream::getNextToken() {
 
 bool TokenStream::ungetToken(int times) {
 	for(int i=0; i<times; i++) {
-		if(CurIndex == 0) {
+		if(CurIndex == 0)
 			return false;
-		} else {
+		else
 			CurIndex--;
-			return true;
-		}
 	}
+	return true;
 }
 
 /*
@@ -52,7 +53,7 @@ bool TokenStream::ungetToken(int times) {
  */
 
 bool TokenStream::printTokens() {
-	std::vector<Tokens*>::iterator titer = Tokens.begin();
+	std::vector<Token*>::iterator titer = Tokens.begin();
 	while( titer != Tokens.end() ) {
 		fprintf(stdout, "%d:", (*titer) -> getTokenType());
 		if((*titer) -> getTokenType() != TOK_EOF)

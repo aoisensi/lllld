@@ -7,7 +7,8 @@
 #include "tokentype.hpp"
 #include "token.hpp"
 
-#include<stdio.h>
+#include<iostream>
+#include<vector>
 
 class TokenStream {
 	private:
@@ -17,7 +18,7 @@ class TokenStream {
 		Token* getCurToken() { return Tokens[CurIndex]; };
 
 	public:
-		TokenStream() : CurIndex(0) {}
+		TokenStream() : CurIndex(0) {};
 		~TokenStream();
 
 		bool ungetToken(int Times=1);
@@ -44,6 +45,6 @@ class TokenStream {
 		};
 
 		bool printTokens();
-}
+};
 
 #endif

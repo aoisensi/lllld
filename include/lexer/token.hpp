@@ -6,13 +6,13 @@
 #include "../APP.hpp"
 #include "tokentype.hpp"
 
-
-#include<stdio.h>
+#include<iostream>
+#include<climits>
 
 class Token {
 	private:
-	TokenType type;
 	std::string tokenString;
+	TokenType type;
 	int number;
 	int line;
 
@@ -21,7 +21,7 @@ class Token {
 		: tokenString(str), type(t), line(l)
 	{
 		if(t == TOK_DIGIT)
-			number = atoi(str.c_str());
+			number = std::stoi(str);
 		else
 			number = INT_MAX;
 	}
@@ -29,16 +29,16 @@ class Token {
 	~Token(){};
 
 	//トークンの種別を取得
-	TokenTypevgetTokenType() { return Type; };
+	TokenType getTokenType() { return type; };
 
 	//トークンの文字列表現を取得
-	std::string getTokenString() { return TokenString; };
+	std::string getTokenString() { return tokenString; };
 
 	//トークンの数値を取得(数字である場合)
-	int getNumberValue() { return Number; };
+	int getNumberValue() { return number; };
 
 	//トークンの出現した行数
-	int getLine() { return Line; };
+	int getLine() { return line; };
 
 };
 
