@@ -61,3 +61,11 @@ lt~obsolete.m4
 ltoptions.m4
 ltsugar.m4
 ltversion.m4
+
+#Cmake
+CMakeCache.txt
+CMakeFiles
+Makefile
+cmake_install.cmake
+install_manifest.txt
+
