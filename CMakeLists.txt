@@ -1,9 +1,9 @@
-cmake_minimum_required(VERSION 2.8)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 
-SET(CXX clang++)
+PROJECT(lllld CXX)
 
-project(lllld CXX)
+SET(CXX_COMPILER clang++)
+SET(CXX_FLAGS "-W -Wall")
 
-INCLUDE_DIRECTORIES(include/)
-
-add_executable(main main.cpp)
+INCLUDE_DIRECTORIES(./include/)
+ADD_EXECUTABLE(lllld src/lllld.cpp src/ast.cpp)

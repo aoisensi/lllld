@@ -2,16 +2,20 @@
 #include <string>
 #include <boost/variant.hpp>
 
-using variant = boost::variant;
-
 namespace ast
 {
-
 	struct integer;
-
-	typedef variant<
+	typedef boost::variant<
 		integer
 			> literal;
+	
+	typedef boost::variant<
+		literal
+			> valavl;
 
+	struct integer 
+	{
+		int value;
+	};
 
 }
