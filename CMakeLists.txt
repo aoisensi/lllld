@@ -2,8 +2,8 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 
 PROJECT(lllld CXX)
 
-SET(CXX_COMPILER clang++)
-SET(CXX_FLAGS "-W -Wall")
+SET(CMAKE_CXX_COMPILER clang++)
+SET(CMAKE_CXX_FLAGS "-std=c++11 -W -Wall")
 
 INCLUDE_DIRECTORIES(./include/)
-ADD_EXECUTABLE(lllld src/lllld.cpp src/ast.cpp)
+ADD_EXECUTABLE(lllld src/lllld.cpp src/lexer.cpp)
